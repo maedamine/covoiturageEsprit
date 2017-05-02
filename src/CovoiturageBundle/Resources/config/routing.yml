@@ -1,0 +1,36 @@
+covoiturage_homepage:
+    path:     /
+    defaults: { _controller: CovoiturageBundle:Default:index }
+
+Accueil:
+    path:     /index
+    defaults: { _controller: CovoiturageBundle:Default:accueil }
+
+Trajets:
+    path:     /trajets
+    defaults: { _controller: CovoiturageBundle:Default:trajets }
+
+About:
+    path:     /about
+    defaults: { _controller: CovoiturageBundle:Default:about }
+
+Contact:
+    path:     /contact
+    defaults: { _controller: CovoiturageBundle:Default:contact }
+
+FAQ:
+    path:     /FAQ
+    defaults: { _controller: CovoiturageBundle:Default:faq }
+
+Promos:
+    path:     /promos
+    defaults: { _controller: CovoiturageBundle:Default:promos }
+
+Auth:
+    path:     /authentification
+    defaults: { _controller: CovoiturageBundle:Default:auth }
+
+Admin:
+    path:     /admin
+    defaults: { _controller: CovoiturageBundle:Default:admin }
+

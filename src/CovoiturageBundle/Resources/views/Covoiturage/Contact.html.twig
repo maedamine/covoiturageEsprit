@@ -1,0 +1,16 @@
+{% extends "CovoiturageBundle:Covoiturage:Layout.html.twig" %}
+{% block navbar %}
+<ul>
+    <li><a href="{{ path('Accueil') }}" title="Accueil">Accueil</a></li>
+    <li><a href="{{ path('Trajets') }}" title="Trajets">Tous les trajets</a></li>
+    <li><a href="{{ path('About') }}" title="About">About</a></li>
+    <li class="active"><a href="{{ path('Contact') }}" title="Contact">Contact</a></li>
+    <li><a href="{{ path('FAQ') }}" title="FAQ">F.A.Q</a></li>
+    <li class="sale-item"><a href="{{ path('Promos') }}" title="Promos">Promos</a></li>
+</ul>
+{% endblock %}
+{% block content %}
+
+    <p>Contact Ici</p>
+
+{% endblock %}
