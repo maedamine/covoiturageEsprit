@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    {% block head %} }
+        {% block title %}
+    <title>Accueil</title>
+            {% endblock %}
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- CSS -->
+    {% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset ('css1/bootstrap.min.css')   }}">
+    <link rel="stylesheet" href="{{asset ('css1/vendor/icon-sets.css')   }}">
+    <link rel="stylesheet" href="{{asset ('css1/main.min.css')   }}">
+    {% endblock %}
+    <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+    <link rel="stylesheet" href="{{asset ('css1/demo.css')   }}">
+    <!-- GOOGLE FONTS -->
+    <link href="{{asset ('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700')   }}" rel="stylesheet">
+    <!-- ICONS -->
+    <link rel="apple-touch-icon" sizes="76x76" href="{{asset ('img/apple-icon.png')   }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{asset ('img/favicon.png')   }}">
+
+    {% endblock %}
+</head>
+
+<body>
+<!-- WRAPPER -->
+<div id="wrapper">
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div class="brand">
+            <a href="index.html"><img src="{{asset ('img/logo.png')   }}" alt="Klorofil Logo" class="img-responsive logo"></a>
+        </div>
+        <div class="sidebar-scroll">
+            <nav>
+                <ul class="nav">
+                    <li><a href="index.html" class="active"><i class="lnr lnr-home"></i> <span>Accueil</span></a></li>
+                    <li><a href="Formations.html" class=""><i class="lnr lnr-pencil"></i> <span>Gestion utilisateur</span></a></li>
+                    <li><a href="Formateurs.html" class=""><i class="lnr lnr-user"></i> <span>Gestion annonce</span></a></li>
+                    <li><a href="Participants.html" class=""><i class="lnr lnr-user"></i> <span>Gestion Quizz</span></a></li>
+                    <li><a href="Repertoire.html" class=""><i class="lnr lnr-bookmark"></i> <span>Gestion reclamation</span></a></li>
+                    <li><a href="Bilan.html" class=""><i class="fa fa-line-chart"></i> <span>Gestion </span></a></li>
+
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+    <!-- END SIDEBAR -->
+    <!-- MAIN -->
+    <div class="main">
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-btn">
+                    <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
+                </div>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <i class="fa fa-bars icon-nav"></i>
+                    </button>
+                </div>
+                <div id="navbar-menu" class="navbar-collapse collapse">
+                    <form class="navbar-form navbar-left hidden-xs">
+                        <div class="input-group">
+                            <input type="text" value="" class="form-control" placeholder="Rechercher...">
+                            <span class="input-group-btn"><button type="button" class="btn btn-primary">Go</button></span>
+                        </div>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
+                                <i class="lnr lnr-alarm"></i>
+                                <span class="badge bg-danger">0</span>
+                            </a>
+                            <!--<ul class="dropdown-menu notifications">
+                                <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>System space is almost full</a></li>
+                                <li><a href="#" class="notification-item"><span class="dot bg-danger"></span>You have 9 unfinished tasks</a></li>
+                                <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Monthly report is available</a></li>
+                                <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>Weekly meeting in 1 hour</a></li>
+                                <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your request has been approved</a></li>
+                                <li><a href="#" class="more">See all notifications</a></li>
+                            </ul>-->
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/user.png" class="img-circle" alt="Avatar"> <span>Utilisateur</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><i class="lnr lnr-user"></i> <span>Mon profil</span></a></li>
+                                <li><a href="#"><i class="lnr lnr-cog"></i> <span>Paramètres</span></a></li>
+                                <li><a href="localhost/index.html"><i class="lnr lnr-exit"></i> <span>Se déconnecter</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- END NAVBAR -->
+        <!-- MAIN CONTENT -->
+
+        {% block content %}
+
+        {% endblock %}
+
+        <!-- END MAIN CONTENT -->
+        <footer>
+            <div class="container-fluid">
+                <p class="copyright">&copy; 2016. Designed &amp; Crafted by <a href="https://themeineed.com">The Develovers</a></p>
+            </div>
+        </footer>
+    </div>
+    <!-- END MAIN -->
+</div>
+<!-- END WRAPPER -->
+<!-- Javascript -->
+<script src="js1/jquery/jquery-2.1.0.min.js"></script>
+<script src="js1/bootstrap/bootstrap.min.js"></script>
+<script src="js1/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="js1/plugins/jquery-easypiechart/jquery.easypiechart.min.js"></script>
+<script src="js1/plugins/chartist/chartist.min.js"></script>
+<script src="js1/klorofil.min.js"></script>
+</body>
+
+</html>
