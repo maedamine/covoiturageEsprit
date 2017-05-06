@@ -91,6 +91,7 @@ h1#logo a { width: 214px; height: 69px; background: url('images/logo.png') no-re
 #cart .shopping { padding-left: 26px; background: url('images/cart.png') no-repeat 0 0; }
 
 /* Navigation */
+
 #navigation { background: #5d5d5d url('images/nav-bottom.png') no-repeat 0 bottom; height: 37px; padding-top: 3px; width: 100%; position: relative; z-index: 20; }
 #navigation li { float: left; display: inline; position: relative; }
 #navigation li a { padding-right: 19px; padding-left: 19px; line-height: 37px; font-weight: bold; font-size: 14px; color: #fff; display: block; text-transform: uppercase; }
