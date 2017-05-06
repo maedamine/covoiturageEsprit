@@ -32,5 +32,5 @@ Auth:
 
 Admin:
     path:     /admin
-    defaults: { _controller: CovoiturageBundle:Default:admin }
+    defaults: { _controller: CovoiturageBundle:Admin:accueil }
 
