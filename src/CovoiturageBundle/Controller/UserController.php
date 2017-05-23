@@ -41,10 +41,7 @@ class UserController extends Controller
         return $this->render('CovoiturageBundle:Covoiturage:Promos.html.twig');
     }
 
-    public function authAction()
-    {
-        return $this->render('CovoiturageBundle:Covoiturage:Authentification.html.twig');
-    }
+
 
     public function profilAction()
     {

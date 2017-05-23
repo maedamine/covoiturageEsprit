@@ -1,3 +1,21 @@
 user_homepage:
     path:     /
     defaults: { _controller: UserBundle:Default:index }
+
+Page_Client:
+    path:     /home
+    defaults: { _controller: CovoiturageBundle:User:accueil }
+
+Page_Agent:
+    path:     /admin
+    defaults: { _controller: CovoiturageBundle:Admin:accueil }
+
+
+Mes_annonces:
+    path:     /mesannonces
+    defaults: { _controller: UserBundle:Profile:mesannonces }
+
+
+Mes_reservations:
+    path:     /mesreservations
+    defaults: { _controller: UserBundle:Profile:mesreservations }

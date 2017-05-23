@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head>
@@ -32,7 +33,7 @@
     <div id="header">
         <!-- Begin Shell -->
         <div class="shell">
-            <h1 id="logo"><a class="notext" href="#" title="accueil">Covoiturage</a></h1>
+            <h1 id="logo"><a class="notext" href="{{ path('Accueil') }}" title="accueil">Covoiturage</a></h1>
             <div id="top-nav">
                 <!-- <ul>
                     <li><a href="#" title="Home"><span></span></a></li>
@@ -42,8 +43,8 @@
                 </ul> -->
             </div>
             <div class="cl">&nbsp;</div>
-            <p id="cart"><span class="profile">Bienvenue , <a href="{{ path('Profil') }}" title="Profil">Visiteur</a> .
-                </span><span class="shopping"><a href="{{ path('Auth') }}" title="login">Login</a>/ <a href="{{ path('Auth') }}" title="login">Inscription  </a></span></p>
+            <p id="cart"><span class="profile">Bienvenue , <a href="{{ path('fos_user_profile_show') }}" title="Profil">Mon compte</a> .
+                </span><span class="shopping"><a href="{{ path('fos_user_security_login') }}" title="login">Login</a>/ <a href="{{ path('fos_user_registration_register') }}" title="login">Inscription  </a></span></p>
         </div>
         <!-- End Shell -->
     </div>
@@ -74,6 +75,10 @@
     <!-- End Navigation -->
     <!-- Begin Slider -->
     <div id="slider">
+        {% block formulaire %}
+
+        {% endblock %}
+
         {% block slider %}
         <!-- Begin Shell -->
         <div class="shell">
@@ -103,383 +108,17 @@
 
 
     <div id="main" class="shell">
+
         {% block content %}
         <!-- Begin Content -->
-        <div id="content">
-            <div class="post">
-                <h2>Welcome!</h2>
-                <img src="css/images/post-img.jpg" alt="Post Image" />
-                <p>Lestibulum vel libero posuere velit faucibus pellentesque. Duis eleifend libero vitae justo porta eget interdum ligula porta. Fusce tristique, ante sit amet hendrerit suscipit, leo metus vehicula sem, eget scelerisque felis leo id magna. Proin imperdiet ullamcorper tellus sed consectetur. Aliquam erat volutpat. Integer orci urna, posuere sed bibendum id, tincidunt non augue. </p>
-                <p>Cras mauris sem, posuere vel semper sed, condimentum non dui. Suspendisse vestibulum ligula eget urna posuere sagittis. Suspendisse sed nisl massa. <a href="#" class="more" title="Read More">Read More</a></p>
-                <div class="cl">&nbsp;</div>
-            </div>
-        </div>
+
         <!-- End Content -->
         <!-- Begin Sidebar -->
-        <div id="sidebar">
-            <ul>
-                <li class="widget">
-                    <h2>TOP Brands</h2>
-                    <div class="brands">
-                        <ul>
-                            <li><a href="#" title="Brand 1"><img src="css/images/brand-img1.jpg" alt="Brand 1" /></a></li>
-                            <li><a href="#" title="Brand 2"><img src="css/images/brand-img2.jpg" alt="Brand 2" /></a></li>
-                            <li><a href="#" title="Brand 3"><img src="css/images/brand-img3.jpg" alt="Brand 3" /></a></li>
-                            <li><a href="#" title="Brand 4"><img src="css/images/brand-img4.jpg" alt="Brand 4" /></a></li>
-                        </ul>
-                        <div class="cl">&nbsp;</div>
-                    </div>
-                    <a href="#" class="more" title="More Brands">More Brands</a>
-                </li>
-            </ul>
-        </div>
+
         <!-- End Sidebar -->
-        <div class="cl">&nbsp;</div>
+
         <!-- Begin Products -->
-        <div id="products">
-            <h2>Featured Products</h2>
-            <div class="product">
-                <a href="#" title="Product Link"><img src="css/images/product-img1.jpg" alt="Product Image" /></a>
-                <div class="price">
-                    <div class="inner">
-                        <span class="title">Price</span>
-                        <strong><span>$</span>85<sup>.00</sup></strong>
-                    </div>
-                </div>
-                <div class="info">
-                    <p>Nike Shox Turbo IX</p>
-                    <p class="number">Product 20</p>
-                </div>
-            </div>
-            <div class="product">
-                <a href="#" title="Product Link"><img src="css/images/product-img2.jpg" alt="Product Image" /></a>
-                <div class="price">
-                    <div class="inner">
-                        <span class="title">Price</span>
-                        <strong><span>$</span>119<sup>.99</sup></strong>
-                    </div>
-                </div>
-                <div class="info">
-                    <p>Nike Air Max Skyline</p>
-                    <p class="number">Product 24</p>
-                </div>
-            </div>
-            <div class="product">
-                <a href="#" title="Product Link"><img src="css/images/product-img3.jpg" alt="Product Image" /></a>
-                <div class="price">
-                    <div class="inner">
-                        <span class="title">Price</span>
-                        <strong><span>$</span>109<sup>.00</sup></strong>
-                    </div>
-                </div>
-                <div class="info">
-                    <p>Nike Air Max <br />Preview</p>
-                    <p class="number">Product 15</p>
-                </div>
-            </div>
-            <div class="product">
-                <a href="#" title="Product Link"><img src="css/images/product-img4.jpg" alt="Product Image" /></a>
-                <div class="price">
-                    <div class="inner">
-                        <span class="title">Price</span>
-                        <strong><span>$</span>75<sup>.00</sup></strong>
-                    </div>
-                </div>
-                <div class="info">
-                    <p>Puma Cell Sorai</p>
-                    <p class="number">Product 18</p>
-                </div>
-            </div>
-            <div class="product">
-                <a href="#" title="Product Link"><img src="css/images/product-img5.jpg" alt="Product Image" /></a>
-                <div class="price">
-                    <div class="inner">
-                        <span class="title">Price</span>
-                        <strong><span>$</span>69<sup>.99</sup></strong>
-                    </div>
-                </div>
-                <div class="info">
-                    <p>adidas Clima Cool Chill</p>
-                    <p class="number">Product 34</p>
-                </div>
-            </div>
-            <div class="cl">&nbsp;</div>
-            <div class="product">
-                <a href="#" title="Product Link"><img src="css/images/product-img1.jpg" alt="Product Image" /></a>
-                <div class="price">
-                    <div class="inner">
-                        <span class="title">Price</span>
-                        <strong><span>$</span>85<sup>.00</sup></strong>
-                    </div>
-                </div>
-                <div class="info">
-                    <p>Nike Shox Turbo IX</p>
-                    <p class="number">Product 20</p>
-                </div>
-            </div>
-            <div class="product">
-                <a href="#" title="Product Link"><img src="css/images/product-img2.jpg" alt="Product Image" /></a>
-                <div class="price">
-                    <div class="inner">
-                        <span class="title">Price</span>
-                        <strong><span>$</span>119<sup>.99</sup></strong>
-                    </div>
-                </div>
-                <div class="info">
-                    <p>Nike Air Max Skyline</p>
-                    <p class="number">Product 24</p>
-                </div>
-            </div>
-            <div class="product">
-                <a href="#" title="Product Link"><img src="css/images/product-img3.jpg" alt="Product Image" /></a>
-                <div class="price">
-                    <div class="inner">
-                        <span class="title">Price</span>
-                        <strong><span>$</span>109<sup>.00</sup></strong>
-                    </div>
-                </div>
-                <div class="info">
-                    <p>Nike Air Max <br />Preview</p>
-                    <p class="number">Product 15</p>
-                </div>
-            </div>
-            <div class="product">
-                <a href="#" title="Product Link"><img src="css/images/product-img4.jpg" alt="Product Image" /></a>
-                <div class="price">
-                    <div class="inner">
-                        <span class="title">Price</span>
-                        <strong><span>$</span>75<sup>.00</sup></strong>
-                    </div>
-                </div>
-                <div class="info">
-                    <p>Puma Cell Sorai</p>
-                    <p class="number">Product 18</p>
-                </div>
-            </div>
-            <div class="product">
-                <a href="#" title="Product Link"><img src="css/images/product-img5.jpg" alt="Product Image" /></a>
-                <div class="price">
-                    <div class="inner">
-                        <span class="title">Price</span>
-                        <strong><span>$</span>69<sup>.99</sup></strong>
-                    </div>
-                </div>
-                <div class="info">
-                    <p>adidas Clima Cool Chill</p>
-                    <p class="number">Product 34</p>
-                </div>
-            </div>
-            <div class="cl">&nbsp;</div>
-            <div class="product">
-                <a href="#" title="Product Link"><img src="css/images/product-img1.jpg" alt="Product Image" /></a>
-                <div class="price">
-                    <div class="inner">
-                        <span class="title">Price</span>
-                        <strong><span>$</span>85<sup>.00</sup></strong>
-                    </div>
-                </div>
-                <div class="info">
-                    <p>Nike Shox Turbo IX</p>
-                    <p class="number">Product 20</p>
-                </div>
-            </div>
-            <div class="product">
-                <a href="#" title="Product Link"><img src="css/images/product-img2.jpg" alt="Product Image" /></a>
-                <div class="price">
-                    <div class="inner">
-                        <span class="title">Price</span>
-                        <strong><span>$</span>119<sup>.99</sup></strong>
-                    </div>
-                </div>
-                <div class="info">
-                    <p>Nike Air Max Skyline</p>
-                    <p class="number">Product 24</p>
-                </div>
-            </div>
-            <div class="product">
-                <a href="#" title="Product Link"><img src="css/images/product-img3.jpg" alt="Product Image" /></a>
-                <div class="price">
-                    <div class="inner">
-                        <span class="title">Price</span>
-                        <strong><span>$</span>109<sup>.00</sup></strong>
-                    </div>
-                </div>
-                <div class="info">
-                    <p>Nike Air Max <br />Preview</p>
-                    <p class="number">Product 15</p>
-                </div>
-            </div>
-            <div class="product">
-                <a href="#" title="Product Link"><img src="css/images/product-img4.jpg" alt="Product Image" /></a>
-                <div class="price">
-                    <div class="inner">
-                        <span class="title">Price</span>
-                        <strong><span>$</span>75<sup>.00</sup></strong>
-                    </div>
-                </div>
-                <div class="info">
-                    <p>Puma Cell Sorai</p>
-                    <p class="number">Product 18</p>
-                </div>
-            </div>
-            <div class="product">
-                <a href="#" title="Product Link"><img src="css/images/product-img5.jpg" alt="Product Image" /></a>
-                <div class="price">
-                    <div class="inner">
-                        <span class="title">Price</span>
-                        <strong><span>$</span>69<sup>.99</sup></strong>
-                    </div>
-                </div>
-                <div class="info">
-                    <p>adidas Clima Cool Chill</p>
-                    <p class="number">Product 34</p>
-                </div>
-            </div>
-            <div class="cl">&nbsp;</div>
-        </div>
-        <!-- End Products -->
-        <!-- Begin Products Slider -->
-        <div id="product-slider">
-            <h2>Best Products</h2>
-            <ul>
-                <li>
-                    <a href="#" title="Product Link"><img src="css/images/product-slide1.jpg" alt="Product Image" /></a>
-                    <div class="info">
-                        <h4>Nike HyperDunk</h4>
-                        <span class="number">Product 34</span>
-                        <span class="price"><span>$</span>159<sup>.99</sup></span>
-                        <div class="cl">&nbsp;</div>
-                    </div>
-                </li>
-                <li>
-                    <a href="#" title="Product Link"><img src="css/images/product-slide2.jpg" alt="Product Image" /></a>
-                    <div class="info">
-                        <h4>adidas Marathon 10</h4>
-                        <span class="number">Product 45</span>
-                        <span class="price"><span>$</span>65<sup>.00</sup></span>
-                        <div class="cl">&nbsp;</div>
-                    </div>
-                </li>
-                <li>
-                    <a href="#" title="Product Link"><img src="css/images/product-slide3.jpg" alt="Product Image" /></a>
-                    <div class="info">
-                        <h4>Nike Zoom Hyperfuse</h4>
-                        <span class="number">Product 55</span>
-                        <span class="price"><span>$</span>85<sup>.50</sup></span>
-                        <div class="cl">&nbsp;</div>
-                    </div>
-                </li>
-                <li>
-                    <a href="#" title="Product Link"><img src="css/images/product-slide4.jpg" alt="Product Image" /></a>
-                    <div class="info">
-                        <h4>Puma Drift Cat Ferrari</h4>
-                        <span class="number">Product 33</span>
-                        <span class="price"><span>$</span>119<sup>.99</sup></span>
-                        <div class="cl">&nbsp;</div>
-                    </div>
-                </li>
-                <li>
-                    <a href="#" title="Product Link"><img src="css/images/product-slide5.jpg" alt="Product Image" /></a>
-                    <div class="info">
-                        <h4>adidas Lin Redy 4</h4>
-                        <span class="number">Product 21</span>
-                        <span class="price"><span>$</span>82<sup>.00</sup></span>
-                        <div class="cl">&nbsp;</div>
-                    </div>
-                </li>
-                <li>
-                    <a href="#" title="Product Link"><img src="css/images/product-slide1.jpg" alt="Product Image" /></a>
-                    <div class="info">
-                        <h4>Nike HyperDunk</h4>
-                        <span class="number">Product 34</span>
-                        <span class="price"><span>$</span>159<sup>.99</sup></span>
-                        <div class="cl">&nbsp;</div>
-                    </div>
-                </li>
-                <li>
-                    <a href="#" title="Product Link"><img src="css/images/product-slide2.jpg" alt="Product Image" /></a>
-                    <div class="info">
-                        <h4>adidas Marathon 10</h4>
-                        <span class="number">Product 45</span>
-                        <span class="price"><span>$</span>65<sup>.00</sup></span>
-                        <div class="cl">&nbsp;</div>
-                    </div>
-                </li>
-                <li>
-                    <a href="#" title="Product Link"><img src="css/images/product-slide3.jpg" alt="Product Image" /></a>
-                    <div class="info">
-                        <h4>Nike Zoom Hyperfuse</h4>
-                        <span class="number">Product 55</span>
-                        <span class="price"><span>$</span>85<sup>.50</sup></span>
-                        <div class="cl">&nbsp;</div>
-                    </div>
-                </li>
-                <li>
-                    <a href="#" title="Product Link"><img src="css/images/product-slide4.jpg" alt="Product Image" /></a>
-                    <div class="info">
-                        <h4>Puma Drift Cat Ferrari</h4>
-                        <span class="number">Product 33</span>
-                        <span class="price"><span>$</span>119<sup>.99</sup></span>
-                        <div class="cl">&nbsp;</div>
-                    </div>
-                </li>
-                <li>
-                    <a href="#" title="Product Link"><img src="css/images/product-slide5.jpg" alt="Product Image" /></a>
-                    <div class="info">
-                        <h4>adidas Lin Redy 4</h4>
-                        <span class="number">Product 21</span>
-                        <span class="price"><span>$</span>82<sup>.00</sup></span>
-                        <div class="cl">&nbsp;</div>
-                    </div>
-                </li>
-                <li>
-                    <a href="#" title="Product Link"><img src="css/images/product-slide1.jpg" alt="Product Image" /></a>
-                    <div class="info">
-                        <h4>Nike HyperDunk</h4>
-                        <span class="number">Product 34</span>
-                        <span class="price"><span>$</span>159<sup>.99</sup></span>
-                        <div class="cl">&nbsp;</div>
-                    </div>
-                </li>
-                <li>
-                    <a href="#" title="Product Link"><img src="css/images/product-slide2.jpg" alt="Product Image" /></a>
-                    <div class="info">
-                        <h4>adidas Marathon 10</h4>
-                        <span class="number">Product 45</span>
-                        <span class="price"><span>$</span>65<sup>.00</sup></span>
-                        <div class="cl">&nbsp;</div>
-                    </div>
-                </li>
-                <li>
-                    <a href="#" title="Product Link"><img src="css/images/product-slide3.jpg" alt="Product Image" /></a>
-                    <div class="info">
-                        <h4>Nike Zoom Hyperfuse</h4>
-                        <span class="number">Product 55</span>
-                        <span class="price"><span>$</span>85<sup>.50</sup></span>
-                        <div class="cl">&nbsp;</div>
-                    </div>
-                </li>
-                <li>
-                    <a href="#" title="Product Link"><img src="css/images/product-slide4.jpg" alt="Product Image" /></a>
-                    <div class="info">
-                        <h4>Puma Drift Cat Ferrari</h4>
-                        <span class="number">Product 33</span>
-                        <span class="price"><span>$</span>119<sup>.99</sup></span>
-                        <div class="cl">&nbsp;</div>
-                    </div>
-                </li>
-                <li>
-                    <a href="#" title="Product Link"><img src="css/images/product-slide5.jpg" alt="Product Image" /></a>
-                    <div class="info">
-                        <h4>adidas Lin Redy 4</h4>
-                        <span class="number">Product 21</span>
-                        <span class="price"><span>$</span>82<sup>.00</sup></span>
-                        <div class="cl">&nbsp;</div>
-                    </div>
-                </li>
-            </ul>
-            <div class="cl">&nbsp;</div>
-        </div>
+
         <!-- End Products Slider -->
         {% endblock %}
     </div>
