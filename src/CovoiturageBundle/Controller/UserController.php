@@ -16,6 +16,11 @@ class UserController extends Controller
         return $this->render('CovoiturageBundle:Covoiturage:index.html.twig');
     }
 
+    public function homeAction()
+    {
+        return $this->render('CovoiturageBundle:Covoiturage:home.html.twig');
+    }
+
     public function trajetsAction()
     {
         return $this->render('CovoiturageBundle:Covoiturage:Trajets.html.twig');

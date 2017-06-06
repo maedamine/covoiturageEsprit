@@ -4,7 +4,7 @@ user_homepage:
 
 Page_Client:
     path:     /home
-    defaults: { _controller: CovoiturageBundle:User:accueil }
+    defaults: { _controller: CovoiturageBundle:User:home }
 
 Page_Agent:
     path:     /admin

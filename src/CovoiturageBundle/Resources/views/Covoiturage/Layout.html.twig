@@ -43,8 +43,10 @@
                 </ul> -->
             </div>
             <div class="cl">&nbsp;</div>
+            {% block logs %}
             <p id="cart"><span class="profile">Bienvenue , <a href="{{ path('fos_user_profile_show') }}" title="Profil">Mon compte</a> .
                 </span><span class="shopping"><a href="{{ path('fos_user_security_login') }}" title="login">Login</a>/ <a href="{{ path('fos_user_registration_register') }}" title="login">Inscription  </a></span></p>
+            {% endblock logs %}
         </div>
         <!-- End Shell -->
     </div>

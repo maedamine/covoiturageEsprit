@@ -5,6 +5,7 @@ namespace UserBundle \Entity;
 use FOS\UserBundle\Model\User as BaseUser;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
 
@@ -58,31 +59,53 @@ class User extends BaseUser
 
 
     /**
-
-
-     * @ORM\Column(type="float", length=255 )
-
-
+     *
+     *
+     *
+     * @ORM\Column(type="integer")
      */
 
     private $solde;
 
 
     /**
-
-
+     *
      * @ORM\Column(type="string", length=255 )
-
-
      */
 
     private $ville;
 
 
+    /**
+
+
+     * @Assert\Date()
+
+
+     */
+
+    private $birthday;
+
+
+    /**
+     * @ORM\Column(type="string",length=255)
+     *
+     *
+     */
+
+    private $imageProfil;
 
 
 
+    /**
 
+
+     * @ORM\Column(type="integer")
+
+
+     */
+
+    private $telephone;
 
     /**
      * @return mixed
@@ -131,6 +154,92 @@ class User extends BaseUser
     {
         $this->prenom = $prenom;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getSolde()
+    {
+        return $this->solde;
+    }
+
+    /**
+     * @param mixed $solde
+     */
+    public function setSolde($solde)
+    {
+        $this->solde = $solde;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getVille()
+    {
+        return $this->ville;
+    }
+
+    /**
+     * @param mixed $ville
+     */
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
+
+    /**
+     * @param mixed $birthday
+     */
+    public function setBirthday($birthday)
+    {
+        $this->birthday = $birthday;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImageProfil()
+    {
+        return $this->imageProfil;
+    }
+
+    /**
+     * @param mixed $imageProfil
+     */
+    public function setImageProfil($imageProfil)
+    {
+        $this->imageProfil = $imageProfil;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+
+    /**
+     * @param mixed $telephone
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+    }
+
+
+
+
+
+
 
 
 
