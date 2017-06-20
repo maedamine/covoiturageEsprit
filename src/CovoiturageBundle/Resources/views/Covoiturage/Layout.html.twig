@@ -32,8 +32,9 @@
     <!-- Begin Header -->
     <div id="header">
         <!-- Begin Shell -->
+        {% block logs %}
         <div class="shell">
-            <h1 id="logo"><a class="notext" href="{{ path('Accueil') }}" title="accueil">Covoiturage</a></h1>
+            <h1 id="logo"><a class="notext" href="{{ path('Page_Client') }}" title="accueil">Covoiturage</a></h1>
             <div id="top-nav">
                 <!-- <ul>
                     <li><a href="#" title="Home"><span></span></a></li>
@@ -43,11 +44,12 @@
                 </ul> -->
             </div>
             <div class="cl">&nbsp;</div>
-            {% block logs %}
+
             <p id="cart"><span class="profile">Bienvenue , <a href="{{ path('fos_user_profile_show') }}" title="Profil">Mon compte</a> .
-                </span><span class="shopping"><a href="{{ path('fos_user_security_login') }}" title="login">Login</a>/ <a href="{{ path('fos_user_registration_register') }}" title="login">Inscription  </a></span></p>
-            {% endblock logs %}
+                </span><span class="shopping"><a href="{{ path('fos_user_security_logout') }}" title="login">Logout</a>
+
         </div>
+        {% endblock logs %}
         <!-- End Shell -->
     </div>
     <!-- End Header -->
@@ -60,7 +62,7 @@
 
             {% block navbar %}
             <ul >
-                <li class="active"><a href="{{ path('Accueil') }}" title="Accueil">Accueil</a></li>
+                <li class="active"><a href="{{ path('Page_Client') }}" title="Accueil">Accueil</a></li>
                 <li><a href="{{ path('Trajets') }}" title="Trajets">Tous les trajets</a></li>
                 <li><a href="{{ path('About') }}" title="About">About</a></li>
                 <li><a href="{{ path('Contact') }}" title="Contact">Contact</a></li>
