@@ -26,9 +26,6 @@ Promos:
     path:     /promos
     defaults: { _controller: CovoiturageBundle:User:promos }
 
-
-
-
 Admin:
     path:     /dashboard
     defaults: { _controller: CovoiturageBundle:Admin:accueil }
@@ -37,3 +34,6 @@ Profil:
     path:     /profil
     defaults: { _controller: CovoiturageBundle:User:profil }
 
+ListQuiz:
+    path:     /listquiz
+    defaults: { _controller: CovoiturageBundle:Admin:list }

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{ asset ('css1/bootstrap.min.css')   }}">
     <link rel="stylesheet" href="{{asset ('css1/vendor/icon-sets.css')   }}">
     <link rel="stylesheet" href="{{asset ('css1/main.min.css')   }}">
-    {% endblock %}
+    {% endblock stylesheet %}
     <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
     <link rel="stylesheet" href="{{asset ('css1/demo.css')   }}">
     <!-- GOOGLE FONTS -->
@@ -25,13 +25,15 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{asset ('img/apple-icon.png')   }}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{asset ('img/favicon.png')   }}">
 
-    {% endblock %}
+    {% endblock head %}
 </head>
 
 <body>
 <!-- WRAPPER -->
 <div id="wrapper">
     <!-- SIDEBAR -->
+    {% block sidebar %}
+
     <div class="sidebar">
         <div class="brand">
             <a href="index.html"><img src="{{asset ('img/logo.png')   }}" alt="Klorofil Logo" class="img-responsive logo"></a>
@@ -51,7 +53,10 @@
         </div>
 
     </div>
+
+    {% endblock sidebar %}
     <!-- END SIDEBAR -->
+
     <!-- MAIN -->
     <div class="main">
         <!-- NAVBAR -->

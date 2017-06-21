@@ -15,4 +15,10 @@ class AdminController extends Controller
     {
         return $this->render('CovoiturageBundle:Admin:Layout.html.twig');
     }
+
+    public function listAction()
+    {
+        return $this->render('CovoiturageBundle:Admin:ListQuiz.html.twig');
+    }
+
 }
