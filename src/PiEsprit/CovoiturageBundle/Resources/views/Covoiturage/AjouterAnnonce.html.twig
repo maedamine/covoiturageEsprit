@@ -1,0 +1,72 @@
+{% extends "PiEspritCovoiturageBundle:Covoiturage:Layout.html.twig" %}
+{% block navbar %}
+    <ul>
+        <li><a href="{{ path('Accueil') }}" title="Accueil">Accueil</a></li>
+        <li><a href="{{ path('Trajets') }}" title="Trajets">Tous les trajets</a></li>
+        <li><a href="{{ path('About') }}" title="About">About</a></li>
+        <li class="active"><a href="{{ path('Contact') }}" title="Contact">Contact</a></li>
+        <li><a href="{{ path('FAQ') }}" title="FAQ">F.A.Q</a></li>
+        <li class="sale-item"><a href="{{ path('Promos') }}" title="Promos">Promos</a></li>
+    </ul>
+{% endblock %}
+
+
+{% block slider %}
+    <div align="center">
+        <img src="https://s3.amazonaws.com/files.enjin.com/1340/modules/forum/attachments/test_1407984950.png" alt="Smiley face" align="center" >
+    </div>
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="col-sm-7"><form class="form-horizontal">
+            <fieldset>
+                <legend>Créer Annonce</legend>
+                <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Départ</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="inputEmail" placeholder="Départ">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputPassword" class="col-lg-2 control-label">Arrivé</label>
+                    <div class="col-lg-10">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Arrivé">
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="inputEmail" placeholder="nom">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-lg-2 control-label">prenom</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="inputEmail" placeholder="prenom">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-lg-2 control-label">age</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="inputEmail" placeholder="age">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+pi_esprit_covoiturage_homepage:
+    path:     /
+    defaults: { _controller: PiEspritCovoiturageBundle:Default:index }
+
+
+Accueil:
+    path:     /index
+    defaults: { _controller: PiEspritCovoiturageBundle:User:accueil }
+
+Trajets:
+    path:     /trajets
+    defaults: { _controller: PiEspritCovoiturageBundle:User:trajets }
+
+About:
+    path:     /about
+    defaults: { _controller: PiEspritCovoiturageBundle:User:about }
+
+Contact:
+    path:     /contact
+    defaults: { _controller: PiEspritCovoiturageBundle:User:contact }
+
+FAQ:
+    path:     /FAQ
+    defaults: { _controller: PiEspritCovoiturageBundle:User:faq }
+
+Promos:
+    path:     /promos
+    defaults: { _controller: PiEspritCovoiturageBundle:User:promos }
+
+Admin:
+    path:     /dashboard
+    defaults: { _controller: CovoiturageBundle:Admin:accueil }
+
+Profil:
+    path:     /profil
+    defaults: { _controller: PiEspritCovoiturageBundle:User:profil }
+
+ListQuiz:
+    path:     /listquiz
+    defaults: { _controller: PiEspritCovoiturageBundle:Admin:list }
+

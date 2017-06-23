@@ -1,0 +1,23 @@
+pi_esprit_user_homepage:
+    path:     /
+    defaults: { _controller: PiEspritUserBundle:Default:index }
+
+
+
+Page_Client:
+    path:     /home
+    defaults: { _controller: PiEspritCovoiturageBundle:User:accueil }
+
+Page_Agent:
+    path:     /admin
+    defaults: { _controller: PiEspritCovoiturageBundle:Admin:accueil }
+
+
+Mes_annonces:
+    path:     /mesannonces
+    defaults: { _controller: PiEspritUserBundle:Profile:mesannonces }
+
+
+Mes_reservations:
+    path:     /mesreservations
+    defaults: { _controller: PiEspritUserBundle:Profile:mesreservations }

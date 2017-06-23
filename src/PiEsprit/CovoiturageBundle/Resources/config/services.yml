@@ -1,0 +1,4 @@
+services:
+#    pi_esprit_covoiturage.example:
+#        class: PiEsprit\CovoiturageBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
