@@ -33,13 +33,10 @@ class User extends BaseUser
 
 
 
+
     /**
-
-
-
-     * @ORM\Column(type="string", length=255 )
-
-
+     * @ORM\Column(type="string", length=255)
+     *
 
      */
 
