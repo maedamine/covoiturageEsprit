@@ -6,7 +6,7 @@
  * Time: 20:27
  */
 
-namespace CovoiturageBundle\Entity;
+namespace PiEsprit\CovoiturageBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -58,7 +58,7 @@ class Voiture
      */
     public $imagePath;
     /**
-     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="PiEsprit\UserBundle\Entity\User")
      */
     public $proprietaire;
 
