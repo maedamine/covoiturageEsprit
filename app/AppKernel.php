@@ -19,6 +19,8 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new PiEsprit\CovoiturageBundle\PiEspritCovoiturageBundle(),
             new PiEsprit\UserBundle\PiEspritUserBundle(),
+            new PiEsprit\MessageBundle\PiEspritMessageBundle(),
+            new FOS\MessageBundle\FOSMessageBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
@@ -50,4 +52,6 @@ class AppKernel extends Kernel
     {
         $loader->load($this->getRootDir().'/config/config_'.$this->getEnvironment().'.yml');
     }
+
+
 }

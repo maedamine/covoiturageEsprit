@@ -1,0 +1,3 @@
+pi_esprit_message_homepage:
+    path:     /
+    defaults: { _controller: PiEspritMessageBundle:Default:index }
