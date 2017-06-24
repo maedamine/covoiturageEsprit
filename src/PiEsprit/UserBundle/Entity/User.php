@@ -15,7 +15,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
  */
 
-class User extends BaseUser
+class User extends BaseUser implements ParticipantInterface
 
 {
 
@@ -43,7 +43,7 @@ class User extends BaseUser
 
      */
 
-    private $nom;
+    private $nom="";
 
     /**
 
@@ -53,7 +53,7 @@ class User extends BaseUser
 
      */
 
-    private $prenom;
+    private $prenom="";
 
 
 
