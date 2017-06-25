@@ -1,0 +1,133 @@
+{% extends "PiEspritUserBundle::layout.html.twig" %}
+
+{% block content %}
+    {% block slider %}
+    {% endblock slider %}
+    {# {% include "@FOSUser/Profile/show_content.html.twig" %} #}
+    <div class="tab-content">
+        <div class="tab-pane active" id="home">
+            <div class="tab-pane" id="1">
+                <ul class="nav nav-tabs">
+                    <li ><a href="{{ path('fos_user_profile_show') }}" data-toggle="tab">Tableau de bord</a></li>
+                    <li><a href="{{path ('Mes_annonces')   }}" data-toggle="tab">Mes annonces</a></li>
+                    <li><a href="{{path ('Mes_reservations')   }}" data-toggle="tab">Mes reservations</a></li>
+                    <li><a href="{{path ('Mes_reservations')   }}" data-toggle="tab">Messages</a></li>
+                    <li  class="active"><a href="{{ path('Mes_informations') }}" data-toggle="tab">Mes informations</a></li>
+
+
+                </ul>
+
+                <div id="myTabContent" class="tab-content">
+
+
+                    <div class="tab-pane fade active in" id="home">
+                        <div class="well">
+                            <div class="row">
+                                <div class="col-sm-4">
+
+                                    <div class="list-group">
+                                        <a href="#" class="list-group-item active">
+                                            Profil
+                                        </a>
+                                        <a href="#" class="list-group-item">Informations Personnelles
+                                        </a>
+                                        <a href="#" class="list-group-item">Photos
+                                        </a>
+                                        <a href="#" class="list-group-item">Véhicules
+                                        </a>
+                                    </div>
+
+                                    <div class="list-group">
+                                        <a href="#" class="list-group-item active">
+                                            Avis
+                                        </a>
+                                        <a href="#" class="list-group-item">Avis Reçus
+                                        </a>
+                                        <a href="#" class="list-group-item">Avis Laissés
+                                        </a>
+                                    </div>
+
+                                    <div class="list-group">
+                                        <a href="#" class="list-group-item active">
+                                            Compte
+                                        </a>
+                                        <a href="#" class="list-group-item">Points Disponibles
+                                        </a>
+                                        <a href="#" class="list-group-item">Paiements Effectués
+                                        </a>
+                                        <a href="#" class="list-group-item">Recharger Compte
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-sm-8">
+                                     {% block profile %}
+                                    <div class="main-column clearfix">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Informations générales</h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                Membre depuis mai 2017</br>
+                                                <a href="#">Lien vers 3eh </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                        {% endblock profile %}
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tab-pane fade" id="annonces">
+                        <p>Food truck fixie locavore, accusamus
+                            mcsweeney's marfa nulla single-origin cof
+                            fee squid. Exercitation +1 labore velit, blog sartor
+                            ial PBR leggings next level wes anderson artisan four loko farm
+                            -to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+                    </div>
+
+
+                    <div class="tab-pane fade" id="reservations">
+                        <p>       *********                </p>
+                    </div>
+
+                    <div class="tab-pane fade" id="Messages">
+                        <p>       *********                </p>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="tab-pane fade" id="informations">
+
+
+
+
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

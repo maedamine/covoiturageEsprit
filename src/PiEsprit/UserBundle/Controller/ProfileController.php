@@ -32,6 +32,8 @@ class ProfileController extends Controller
         return $this->render('@FOSUser/Profil/mesreservations.html.twig');
     }
 
+
+
     public function showAction()
     {
         $user = $this->getUser();

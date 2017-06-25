@@ -1,26 +1,9 @@
-{% extends "@FOSUser/layout.html.twig" %}
+{% extends "PiEspritUserBundle:Profile:show.html.twig" %}
 
-{% block content %}
-    {% block slider %}
-    {% endblock slider %}
+{% block profile %}
+
 {% block fos_user_content %}
-    <div class="tab-content">
-        <div class="tab-pane active" id="home">
-            <div class="tab-pane" id="1">
-                <ul class="nav nav-tabs">
-                    <li ><a href="{{ path('fos_user_profile_show') }}" data-toggle="tab">Tableau de bord</a></li>
-                    <li><a href="{{path ('Mes_annonces')   }}" data-toggle="tab">Mes annonces</a></li>
-                    <li><a href="{{path ('Mes_reservations')   }}" data-toggle="tab">Mes reservations</a></li>
-                    <li><a href="{{path ('Mes_reservations')   }}" data-toggle="tab">Messages</a></li>
-                    <li class="active"><a href="{{ path('fos_user_profile_edit') }}" data-toggle="tab">Mes informations</a></li>
 
-
-                </ul>
-
-
-            </div>
-        </div>
-    </div>
 
 
 
@@ -29,4 +12,4 @@
 
 cl
 {% endblock fos_user_content %}
-{% endblock content %}
+{% endblock profile %}
