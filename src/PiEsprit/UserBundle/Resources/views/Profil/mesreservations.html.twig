@@ -1,5 +1,4 @@
-{% extends "UserBundle::layout.html.twig" %}
-
+{% extends "PiEspritUserBundle::layout.html.twig" %}
 
 {% block content %}
     {% block slider %}
@@ -12,7 +11,7 @@
                     <li ><a href="{{ path('fos_user_profile_show') }}" data-toggle="tab">Tableau de bord</a></li>
                     <li><a href="{{path ('Mes_annonces')   }}" data-toggle="tab">Mes annonces</a></li>
                     <li class="active"><a href="{{path ('Mes_reservations')   }}" data-toggle="tab">Mes reservations</a></li>
-                    <li><a href="{{path ('Mes_reservations')   }}" data-toggle="tab">Messages</a></li>
+                    <li><a href="{{path ('fos_message_inbox')   }}" data-toggle="tab">Messages</a></li>
                     <li><a href="{{ path('fos_user_profile_edit') }}" data-toggle="tab">Mes informations</a></li>
 
 

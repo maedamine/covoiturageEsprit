@@ -28,5 +28,5 @@ fos_user:
 # app/config/routing.yml
 
 fos_message:
-    resource: "@FOSMessageBundle/Resources/config/routing.xml"
+    resource: "@PiEspritMessageBundle/Resources/config/routing.xml"
     prefix: /msg

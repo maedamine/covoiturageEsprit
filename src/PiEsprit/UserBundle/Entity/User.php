@@ -34,6 +34,7 @@ class User extends BaseUser implements ParticipantInterface
 
 
 
+
     /**
 
 
@@ -131,6 +132,8 @@ class User extends BaseUser implements ParticipantInterface
     {
         return $this->nom;
     }
+
+
 
     /**
      * @param mixed $nom
