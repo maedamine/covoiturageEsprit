@@ -1,11 +1,33 @@
-{% extends 'FOSMessageBundle::layout.html.twig' %}
+{% extends "PiEspritUserBundle::layout.html.twig" %}
 
-{% block fos_message_content %}
 
-<h2>{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</h2>
+{% block content %}
+    {% block slider %} {% endblock slider %}
 
-<a href="{{ url('fos_message_thread_new' )}}">{% trans from 'FOSMessageBundle' %}send_new{% endtrans %}</a>
+        <div class="tab-content">
+            <div class="tab-pane active" id="home">
+                <div class="tab-pane" id="1">
+                    <ul class="nav nav-tabs">
+                        <li ><a href="{{ path('fos_user_profile_show') }}" data-toggle="tab">Tableau de bord</a></li>
+                        <li><a href="{{path ('Mes_annonces')   }}" data-toggle="tab">Mes annonces</a></li>
+                        <li><a href="{{path ('Mes_reservations')   }}" data-toggle="tab">Mes reservations</a></li>
+                        <li class="active"><a href="{{path ('Mes_reservations')   }}" data-toggle="tab">Messages</a></li>
+                        <li><a href="{{ path('fos_user_profile_edit') }}" data-toggle="tab">Mes informations</a></li>
+                    </ul>
+                </div>
 
-{% include 'FOSMessageBundle:Message:threads_list.html.twig' with {'threads': threads} %}
+                <h2>{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</h2>
 
-{% endblock %}
+                <a href="{{ url('fos_message_thread_new' )}}">{% trans from 'FOSMessageBundle' %}send_new{% endtrans %}</a>
+
+                {% include 'PiEspritMessageBundle:Message:threads_list.html.twig' with {'threads': threads} %}
+
+       </div>
+
+
+        </div>
+
+
+
+
+{% endblock content %}
