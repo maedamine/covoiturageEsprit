@@ -20,8 +20,7 @@ class VoitureController extends Controller
      */
     public function indexAction()
     {
-        $session=new Session();
-        $session -> getId();
+
 
         $em = $this->getDoctrine()->getManager();
 
@@ -29,7 +28,7 @@ class VoitureController extends Controller
 
         return $this->render('@PiEspritCovoiturage/voiture/index.html.twig', array(
             'voitures' => $voitures,
-            'session' => $session,
+
         ));
     }
 
