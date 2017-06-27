@@ -74,6 +74,8 @@ class Voiture
     {
     }
 
+
+
     /**
      * @return mixed
      */
@@ -233,9 +235,6 @@ class Voiture
     {
         $this->description = $description;
     }
-
-
-
 
 
 

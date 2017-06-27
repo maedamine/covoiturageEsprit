@@ -4,19 +4,20 @@
 
     {% block profile %}
 {% block body %}
+    {{ session }}
     <h1>Toutes mes voitures </h1>
 
     <table border="1">
         <thead>
             <tr>
-                <th>Id</th>
+                {#<th>Id</th>#}
                 <th>Matricule</th>
                 <th>Modele</th>
-                <th>Marque</th>
+                {#<th>Marque</th>#}
                 <th>Photo</th>
                 <th>Nombreplaces</th>
-                <th>Puissance</th>
-                <th>Imagepath</th>
+                {#<th>Puissance</th>#}
+                {#<th>Imagepath</th>#}
                 <th>Description</th>
                 <th>Actions</th>
             </tr>
@@ -24,14 +25,14 @@
         <tbody>
         {% for voiture in voitures %}
             <tr>
-                <td><a href="{{ path('voiture_show', { 'id': voiture.id }) }}">{{ voiture.id }}</a></td>
+                {#<td><a href="{{ path('voiture_show', { 'id': voiture.id }) }}">{{ voiture.id }}</a></td>#}
                 <td>{{ voiture.matricule }}</td>
                 <td>{{ voiture.modele }}</td>
-                <td>{{ voiture.marque }}</td>
+                {#<td>{{ voiture.marque }}</td>#}
                 <td>{{ voiture.photo }}</td>
                 <td>{{ voiture.nombreplaces }}</td>
-                <td>{{ voiture.puissance }}</td>
-                <td>{% if voiture.imagePath %}{{ voiture.imagePath|join(', ') }}{% endif %}</td>
+                {#<td>{{ voiture.puissance }}</td>#}
+                {#<td>{% if voiture.imagePath %}{{ voiture.imagePath|join(', ') }}{% endif %}</td>#}
                 <td>{{ voiture.description }}</td>
                 <td>
                     <ul>

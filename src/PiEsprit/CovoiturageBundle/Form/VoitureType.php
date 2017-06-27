@@ -13,7 +13,15 @@ class VoitureType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('matricule')->add('modele')->add('marque')->add('photo')->add('nombreplaces')->add('puissance')->add('imagePath')->add('description')->add('proprietaire');
+        $builder->add('matricule')
+                ->add('modele')
+                ->add('marque')
+                ->add('photo')
+                ->add('nombreplaces')
+                ->add('puissance')
+                ->add('imagePath')
+                ->add('description')
+                ->add('proprietaire');
     }
     
     /**

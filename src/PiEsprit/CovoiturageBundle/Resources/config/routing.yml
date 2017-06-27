@@ -33,7 +33,7 @@ Promos:
 
 Admin:
     path:     /dashboard
-    defaults: { _controller: CovoiturageBundle:Admin:accueil }
+    defaults: { _controller: PiEspritCovoiturageBundle:Admin:accueil }
 
 Profil:
     path:     /profil

@@ -2,6 +2,8 @@
 
 namespace PiEsprit\CovoiturageBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Session\Session;
+
 use PiEsprit\CovoiturageBundle\Entity\Voiture;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,12 +20,16 @@ class VoitureController extends Controller
      */
     public function indexAction()
     {
+        $session=new Session();
+        $session -> getId();
+
         $em = $this->getDoctrine()->getManager();
 
         $voitures = $em->getRepository('PiEspritCovoiturageBundle:Voiture')->findAll();
 
         return $this->render('@PiEspritCovoiturage/voiture/index.html.twig', array(
             'voitures' => $voitures,
+            'session' => $session,
         ));
     }
 
@@ -33,6 +39,9 @@ class VoitureController extends Controller
      */
     public function newAction(Request $request)
     {
+
+
+
         $voiture = new Voiture();
         $form = $this->createForm('PiEsprit\CovoiturageBundle\Form\VoitureType', $voiture);
         $form->handleRequest($request);
@@ -48,6 +57,7 @@ class VoitureController extends Controller
         return $this->render('@PiEspritCovoiturage/voiture/new.html.twig', array(
             'voiture' => $voiture,
             'form' => $form->createView(),
+
         ));
     }
 

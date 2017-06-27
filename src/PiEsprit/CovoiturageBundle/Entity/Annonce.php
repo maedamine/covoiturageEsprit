@@ -1,7 +1,7 @@
 <?php
 
 
-namespace CovoiturageBundle\Entity;
+namespace PiEsprit\CovoiturageBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -157,7 +157,7 @@ class Annonce
     }
 
     /**
-     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="PiEsprit\UserBundle\Entity\User")
      * @ORM\JoinColumn(name="userid", referencedColumnName="id")
      */
     public $userid;

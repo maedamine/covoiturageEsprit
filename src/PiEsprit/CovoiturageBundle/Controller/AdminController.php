@@ -2,6 +2,7 @@
 
 namespace PiEsprit\CovoiturageBundle\Controller;
 
+use Composer\DependencyResolver\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class AdminController extends Controller
