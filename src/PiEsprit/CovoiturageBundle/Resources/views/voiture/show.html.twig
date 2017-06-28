@@ -26,7 +26,7 @@
             </tr>
             <tr>
                 <th>Photo</th>
-                <td>{{ voiture.photo }}</td>
+                <td>{{ voiture.imageName }}</td>
             </tr>
             <tr>
                 <th>Nombreplaces</th>
@@ -38,7 +38,10 @@
             </tr>
             <tr>
                 <th>Imagepath</th>
-                <td>{% if voiture.imagePath %}{{ voiture.imagePath|join(', ') }}{% endif %}</td>
+
+                <img src="{{asset ('img/'~ voiture.imageName)}}" alt="Slide Image" />
+
+                {#<td>{% if voiture.imageFile %}{{ voiture.imageFile|join(', ') }}{% endif %}</td>#}
             </tr>
             <tr>
                 <th>Description</th>

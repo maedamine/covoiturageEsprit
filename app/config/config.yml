@@ -86,3 +86,19 @@ fos_message:
     db_driver: orm
     thread_class: PiEsprit\MessageBundle\Entity\Thread
     message_class: PiEsprit\MessageBundle\Entity\Message
+
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        voiture_image:
+            uri_prefix:         /images/voitures
+            upload_destination: C:\wamp64\www\covoiturageEsprit\web\img
+            namer:              vich_uploader.namer_origname
+
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true
+
+
+

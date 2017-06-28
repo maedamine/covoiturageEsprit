@@ -4,7 +4,7 @@
 
     {% block profile %}
 {% block body %}
-    
+
     <h1>Toutes mes voitures </h1>
 
     <table border="1">
@@ -29,7 +29,7 @@
                 <td>{{ voiture.matricule }}</td>
                 <td>{{ voiture.modele }}</td>
                 {#<td>{{ voiture.marque }}</td>#}
-                <td>{{ voiture.photo }}</td>
+                <td><img src="{{asset ('img/'~ voiture.imageName)}}" alt="Slide Image" /></td>
                 <td>{{ voiture.nombreplaces }}</td>
                 {#<td>{{ voiture.puissance }}</td>#}
                 {#<td>{% if voiture.imagePath %}{{ voiture.imagePath|join(', ') }}{% endif %}</td>#}

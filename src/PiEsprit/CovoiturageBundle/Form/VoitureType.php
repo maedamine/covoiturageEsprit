@@ -3,6 +3,7 @@
 namespace PiEsprit\CovoiturageBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -16,10 +17,11 @@ class VoitureType extends AbstractType
         $builder->add('matricule')
                 ->add('modele')
                 ->add('marque')
-                ->add('photo')
+
                 ->add('nombreplaces')
                 ->add('puissance')
-                ->add('imagePath')
+                ->add('imageFile', FileType::class)
+
                 ->add('description')
                 ->add('proprietaire');
     }

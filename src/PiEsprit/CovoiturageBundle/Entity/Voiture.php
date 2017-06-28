@@ -10,6 +10,9 @@ namespace PiEsprit\CovoiturageBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -18,6 +21,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  *     fields={"matricule"},
  *     message="cette matricule est déja utilisé . Veuillez vérifier la votre "
  * )
+ * @Vich\Uploadable
  */
 class Voiture
 {
@@ -40,12 +44,34 @@ class Voiture
      * @ORM\Column(type="string",length=225)
      */
     public $marque;
+
     /**
-     * @ORM\Column(type="string",length=225,nullable=true)
+     * @ORM\Column(type="string", length=255)
+     *
+     * @var string
      */
-    public $photo;
+    public $imageName;
+
     /**
      * @ORM\Column(type="integer")
+     *
+     * @var integer
+     */
+//    private $imageSize;
+
+    /**
+     * @ORM\Column(type="datetime")
+     *
+     * @var \DateTime
+     */
+    private $updatedAt;
+    /**
+     * @ORM\Column(type="integer")
+     * * @Assert\Range(
+     *      min = 0,
+     *      max = 6,
+     *      minMessage = "Vous ne pouvez pas donner un nombre négatif",
+     *      maxMessage = "le nombre de places mentionné est trop ellevé  ")
      */
     public $nombreplaces;
     /**
@@ -54,9 +80,13 @@ class Voiture
     public $puissance;
 
     /**
-     * @ORM\Column(type="array",nullable=true)
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @Vich\UploadableField(mapping="voiture_image", fileNameProperty="imageName")
+     *
+     * @var File
      */
-    public $imagePath;
+    public $imageFile;
     /**
      * @ORM\ManyToOne(targetEntity="PiEsprit\UserBundle\Entity\User")
      */
@@ -73,8 +103,6 @@ class Voiture
     public function __construct()
     {
     }
-
-
 
     /**
      * @return mixed
@@ -141,19 +169,59 @@ class Voiture
     }
 
     /**
-     * @return mixed
+     * @param string $imageName
+     *
+     * @return Voiture
      */
-    public function getPhoto()
+    public function setImageName($imageName)
     {
-        return $this->photo;
+        $this->imageName = $imageName;
+
+        return $this;
     }
 
     /**
-     * @param mixed $photo
+     * @return string|null
      */
-    public function setPhoto($photo)
+    public function getImageName()
     {
-        $this->photo = $photo;
+        return $this->imageName;
+    }
+
+    /**
+     * @param integer $imageSize
+     *
+     * @return Voiture
+     */
+   /* public function setImageSize($imageSize)
+    {
+        $this->imageSize = $imageSize;
+
+        return $this;
+    }*/
+
+    /**
+     * @return integer|null
+     */
+    /*public function getImageSize()
+    {
+        return $this->imageSize;
+    }*/
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param \DateTime $updatedAt
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
     }
 
     /**
@@ -189,19 +257,35 @@ class Voiture
     }
 
     /**
-     * @return mixed
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the  update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
+     *
+     * @return Voiture
      */
-    public function getImagePath()
+    public function setImageFile(File $image = null)
     {
-        return $this->imagePath;
+        $this->imageFile = $image;
+
+        if ($image) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+
+        return $this;
     }
 
     /**
-     * @param mixed $imagePath
+     * @return File|null
      */
-    public function setImagePath($imagePath)
+    public function getImageFile()
     {
-        $this->imagePath = $imagePath;
+        return $this->imageFile;
     }
 
     /**
@@ -235,6 +319,9 @@ class Voiture
     {
         $this->description = $description;
     }
+
+
+
 
 
 

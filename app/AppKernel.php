@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new PiEsprit\UserBundle\PiEspritUserBundle(),
             new PiEsprit\MessageBundle\PiEspritMessageBundle(),
             new FOS\MessageBundle\FOSMessageBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

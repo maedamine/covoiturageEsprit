@@ -13,10 +13,10 @@
         matricule{{ form_widget(form.matricule) }}<br>
         modele{{ form_widget(form.modele) }}<br>
         marque{{ form_widget(form.marque) }}<br>
-        photo{{ form_widget(form.photo) }}<br>
+        {#photo{{ form_widget(form.imageName) }}<br>#}
         nombreplaces{{ form_widget(form.nombreplaces) }}<br>
         puissance{{ form_widget(form.puissance) }}<br>
-        imagePath{{ form_widget(form.imagePath) }}<br>
+        imagePath{{ form_widget(form.imageFile) }}<br>
         description{{ form_widget(form.description) }}<br>
         proprietaire{{ form_widget(form.proprietaire, {value :'session'} )}}<br>
         <input type="submit" value="Create" />
