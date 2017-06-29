@@ -1,0 +1,24 @@
+Annonce_index:
+    path:     /
+    defaults: { _controller: "PiEspritCovoiturageBundle:Annonce:index" }
+    methods:  GET
+
+Annonce_show:
+    path:     /{id}/show
+    defaults: { _controller: "PiEspritCovoiturageBundle:Annonce:show" }
+    methods:  GET
+
+Annonce_new:
+    path:     /new
+    defaults: { _controller: "PiEspritCovoiturageBundle:Annonce:new" }
+    methods:  [GET, POST]
+
+Annonce_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PiEspritCovoiturageBundle:Annonce:edit" }
+    methods:  [GET, POST]
+
+Annonce_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PiEspritCovoiturageBundle:Annonce:delete" }
+    methods:  DELETE

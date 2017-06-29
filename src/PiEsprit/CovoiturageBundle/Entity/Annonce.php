@@ -3,13 +3,15 @@
 
 namespace PiEsprit\CovoiturageBundle\Entity;
 
+use PiEsprit\CovoiturageBundle\Entity\Voiture;
 use Doctrine\ORM\Mapping as ORM;
+
 
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="annonce")
- * @ORM\Entity(repositoryClass="CovoiturageBundle\AnnonceRepository")
+ * @ORM\Entity(repositoryClass="PiEsprit\CovoiturageBundle\Repository\AnnonceRepository")
  */
 
 class Annonce

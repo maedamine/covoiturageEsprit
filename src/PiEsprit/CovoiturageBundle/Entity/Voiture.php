@@ -12,16 +12,15 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
+ * @Vich\Uploadable
  * @ORM\Table(name="Voiture")
  * @UniqueEntity(
  *     fields={"matricule"},
  *     message="cette matricule est déja utilisé . Veuillez vérifier la votre "
  * )
- * @Vich\Uploadable
  */
 class Voiture
 {
@@ -35,7 +34,6 @@ class Voiture
      * @ORM\Column(type="string",length=225)
      */
     public $matricule;
-
     /**
      * @ORM\Column(type="string",length=225)
      */
@@ -44,20 +42,42 @@ class Voiture
      * @ORM\Column(type="string",length=225)
      */
     public $marque;
-
     /**
      * @ORM\Column(type="string", length=255)
      *
      * @var string
      */
     public $imageName;
-
+    /**
+     * @ORM\Column(type="integer")
+     */
+    public $nombreplaces;
+    /**
+     * @ORM\Column(type="string",length=225)
+     */
+    public $puissance;
+    /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @Vich\UploadableField(mapping="voiture_image", fileNameProperty="imageName", size="imageSize")
+     *
+     * @var File
+     */
+    private $imageFile;
+    /**
+     * @ORM\ManyToOne(targetEntity="PiEsprit\UserBundle\Entity\User")
+     */
+    public $proprietaire;
+    /**
+     * @ORM\Column(type="text",nullable=true)
+     */
+    public $description;
     /**
      * @ORM\Column(type="integer")
      *
      * @var integer
      */
-//    private $imageSize;
+    private $imageSize;
 
     /**
      * @ORM\Column(type="datetime")
@@ -65,40 +85,9 @@ class Voiture
      * @var \DateTime
      */
     private $updatedAt;
-    /**
-     * @ORM\Column(type="integer")
-     * * @Assert\Range(
-     *      min = 0,
-     *      max = 6,
-     *      minMessage = "Vous ne pouvez pas donner un nombre négatif",
-     *      maxMessage = "le nombre de places mentionné est trop ellevé  ")
-     */
-    public $nombreplaces;
-    /**
-     * @ORM\Column(type="string",length=225)
-     */
-    public $puissance;
 
     /**
-     * NOTE: This is not a mapped field of entity metadata, just a simple property.
-     *
-     * @Vich\UploadableField(mapping="voiture_image", fileNameProperty="imageName")
-     *
-     * @var File
-     */
-    public $imageFile;
-    /**
-     * @ORM\ManyToOne(targetEntity="PiEsprit\UserBundle\Entity\User")
-     */
-    public $proprietaire;
-
-    /**
-     * @ORM\Column(type="text",nullable=true)
-     */
-    public $description;
-
-    /**
-     * Vehicule constructor.
+     * Voiture constructor.
      */
     public function __construct()
     {
@@ -186,42 +175,6 @@ class Voiture
     public function getImageName()
     {
         return $this->imageName;
-    }
-
-    /**
-     * @param integer $imageSize
-     *
-     * @return Voiture
-     */
-   /* public function setImageSize($imageSize)
-    {
-        $this->imageSize = $imageSize;
-
-        return $this;
-    }*/
-
-    /**
-     * @return integer|null
-     */
-    /*public function getImageSize()
-    {
-        return $this->imageSize;
-    }*/
-
-    /**
-     * @return \DateTime
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updatedAt;
-    }
-
-    /**
-     * @param \DateTime $updatedAt
-     */
-    public function setUpdatedAt($updatedAt)
-    {
-        $this->updatedAt = $updatedAt;
     }
 
     /**
@@ -320,10 +273,52 @@ class Voiture
         $this->description = $description;
     }
 
+    /**
+     * @param integer $imageSize
+     *
+     * @return Voiture
+     */
+    public function setImageSize($imageSize)
+    {
+        $this->imageSize = $imageSize;
 
+        return $this;
+    }
 
+    /**
+     * @return integer|null
+     */
+    public function getImageSize()
+    {
+        return $this->imageSize;
+    }
 
+    /**
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
 
+    /**
+     * @param \DateTime $updatedAt
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+    }
+
+    function __toString()
+    {
+        /*if(is_null($this->matricule)) {
+            return 'NULL';
+        }
+        return $this->matricule;*/
+
+        return $this->marque;
+
+    }
 
 
 }

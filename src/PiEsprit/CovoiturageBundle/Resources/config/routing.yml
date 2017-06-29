@@ -2,10 +2,13 @@ pi_esprit_covoiturage_voiture:
     resource: "@PiEspritCovoiturageBundle/Resources/config/routing/voiture.yml"
     prefix:   /voiture
 
+pi_esprit_covoiturage_Annonce:
+    resource: "@PiEspritCovoiturageBundle/Resources/config/routing/annonce.yml"
+    prefix:   /Annonce
+
 pi_esprit_covoiturage_homepage:
     path:     /
     defaults: { _controller: PiEspritCovoiturageBundle:Default:index }
-
 
 Accueil:
     path:     /index

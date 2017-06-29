@@ -20,16 +20,21 @@ class VoitureController extends Controller
      */
     public function indexAction()
     {
+            $session=new Session();
+            $id=$session->getId();
 
 
-        $em = $this->getDoctrine()->getManager();
 
-        $voitures = $em->getRepository('PiEspritCovoiturageBundle:Voiture')->findAll();
 
-        return $this->render('@PiEspritCovoiturage/voiture/index.html.twig', array(
-            'voitures' => $voitures,
 
-        ));
+            $em = $this->getDoctrine()->getManager();
+
+            $voitures = $em->getRepository('PiEspritCovoiturageBundle:Voiture')->findby(array('id' => $id));
+
+            return $this->render('@PiEspritCovoiturage/voiture/index.html.twig', array(
+                'voitures' => $voitures,
+
+            ));
     }
 
     /**

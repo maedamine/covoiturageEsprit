@@ -82,7 +82,7 @@ $redirection = new RedirectResponse($this->router->generate('Page_Agent'));
 
 else
 
-$redirection = new RedirectResponse($this->router->generate('my_app_esprit_homepage'));
+$redirection = new RedirectResponse($this->router->generate('Accueil'));
 
 return $redirection;
 

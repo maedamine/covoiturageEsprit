@@ -6,7 +6,7 @@
     {% block head %} }
         {% block title %}
     <title>Accueil</title>
-            {% endblock %}
+            {% endblock title %}
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -20,7 +20,7 @@
     <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
     <link rel="stylesheet" href="{{asset ('css1/demo.css')   }}">
     <!-- GOOGLE FONTS -->
-    <link href="{{asset ('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700')   }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="{{asset ('img/apple-icon.png')   }}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{asset ('img/favicon.png')   }}">
@@ -95,7 +95,7 @@
                         </li>
 
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/user.png" class="img-circle" alt="Avatar"> <span>Utilisateur</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset ('img/user.png')   }}" class="img-circle" alt="Avatar"> <span>Utilisateur</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#"><i class="lnr lnr-user"></i> <span>Mon profil</span></a></li>
                                 <li><a href="#"><i class="lnr lnr-cog"></i> <span>Paramètres</span></a></li>
